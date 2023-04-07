@@ -49,4 +49,34 @@ fetch('https://isro.vercel.app/api/launchers')
     console.error(error);
   });
 
-  
+const csItems = document.querySelector(".csItems");
+var info = [];
+fetch('https://isro.vercel.app/api/customer_satellites')
+  .then(response => response.json())
+  .then(data => {
+      data?.customer_satellites?.forEach((item, index) => {
+        info.push(item)
+        const div = document.createElement("div");
+        div.textContent = `${item.id} ${item.country} ${item.launch_date} ${item.mass} ${item.launcher}`;
+        div.classList.add(index % 2 === 0 ? "even" : "odd");
+        csItems.appendChild(div);
+    });
+    console.log(info);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+const search = document.querySelector('.search');
+search.addEventListener('input', ()=>{
+    const filteredInfo = info?.filter((item)=>{ 
+        return item.country.toLowerCase() == search.value.toLowerCase();
+    });
+    csItems.innerHTML = '';
+    filteredInfo.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.textContent = `${item.id} ${item.country} ${item.launch_date} ${item.mass} ${item.launcher}`;
+        div.classList.add(index % 2 === 0 ? "even" : "odd");
+        csItems.appendChild(div);
+    });
+});

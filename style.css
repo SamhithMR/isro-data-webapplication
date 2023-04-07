@@ -77,7 +77,7 @@
 }
 
 .display{
-    display: flex;
+    display: block;
 }
 .hidden{
     display: none;
