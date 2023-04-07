@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +8,40 @@
     <link rel="stylesheet" href="style.css">
     <title>ISRO</title>
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo"><img src="./assets/isro.svg" alt="" srcset=""></div>
         <h1>Indian Space Research Organisation </h2>
     </div>
     <div class="container">
-            <div class="sidebar">
-                <p class="itemss">spacecrafts</p>
-                <p class="itemss">launchers</p>
-                <p class="itemss">customer satellites</p>
-                <p class="itemss">centres</p>
+        <div class="sidebar">
+            <p class="itemss">Space Crafts</p>
+            <p class="itemss">Launchers</p>
+            <p class="itemss">Customer Satellites</p>
+            <p class="itemss">Centres</p>
+        </div>
+        <div class="main">
+            <div class="spacecrafts item display"></div>
+            <div class="launchers item hidden"></div>
+            <div class="customer_satellites item hidden">
+                <div class="filter">
+                    <input type="search" class="search" />
+                    <button type="submit">search</button>
+                </div>
+                <div class="csItems">
+                </div>
             </div>
-            <div class="main">
-                <div class="spacecrafts item display"></div>
-                <div class="launchers item hidden"></div>
-                <div class="customer_satellites item hidden"> 
-                    <div class="filter">
-                        <input type="search" class="search"/> 
-                    </div>
-                    <div class="csItems">
-                    </div>
+            <div class="center item hidden">
+                <div class="filter2">
+                    <input type="search" class="search2">
+                    <button type="submit">search</button>
                 </div>
-                <div class="center item hidden">
-                    <div class="filter2">
-                        <input type="search" class="search2">
-                    </div>
-                    <div class="centers"></div>
-                </div>
+                <div class="centers"></div>
             </div>
         </div>
+    </div>
     <script src="./script.js"></script>
 </body>
+
 </html>
