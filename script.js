@@ -80,3 +80,36 @@ search.addEventListener('input', ()=>{
         csItems.appendChild(div);
     });
 });
+
+
+const center = document.querySelector(".center");
+var info2 = [];
+fetch('https://isro.vercel.app/api/centres')
+  .then(response => response.json())
+  .then(data => {
+      data?.centres?.forEach((item, index) => {
+        info2.push(item)
+        const div = document.createElement("div");
+        div.textContent = `${item.id} ${item.name} ${item.Place} ${item.State} `;
+        div.classList.add(index % 2 === 0 ? "even" : "odd");
+        center.appendChild(div);
+    });
+    console.log(info2);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+const search2 = document.querySelector('.search2');
+search2.addEventListener('input', ()=>{
+    const filteredInfo2 = info2?.filter((item)=>{ 
+        return item.State.toLowerCase() == search2.value.toLowerCase();
+    });
+    center.innerHTML = '';
+    filteredInfo2.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.textContent = `${item.id} ${item.name} ${item.Place} ${item.State}`;
+        div.classList.add(index % 2 === 0 ? "even" : "odd");
+        center.appendChild(div);
+    });
+});
