@@ -15,6 +15,7 @@ fetch('https://isro.vercel.app/api/spacecrafts')
     console.error(error);
   });
 
+  
   const itemss = document.querySelectorAll('.itemss');
   const items = document.querySelectorAll('.item');
   
@@ -32,4 +33,3 @@ fetch('https://isro.vercel.app/api/spacecrafts')
       });
     });
   });
-  
