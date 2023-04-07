@@ -52,13 +52,13 @@
     position: relative;
 }
 
-.spacecrafts{
+.spacecrafts, .launchers{
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     padding: 2rem;
 }
-.spacecrafts > *{
+.spacecrafts > *, .launchers > *{
     border: 1px solid #bcbcbc;
     padding: 1rem;
 }
